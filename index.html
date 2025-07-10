@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mot de passe requis</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #fcd1d1, #d1f4ff, #fff6b7);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      width: 200px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffc0cb;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>💌 Coucou FX 💌</h2>
+    <p>Entre notre mot de passe pour entrer dans notre petit monde :</p>
+    <input type="password" id="pwd" placeholder="Mot de passe" />
+    <br/>
+    <button onclick="checkPassword()">Entrer</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pwd = document.getElementById('pwd').value;
+      if (pwd === '09avril2025') {
+        window.location.href = 'nous.html';
+      } else {
+        document.getElementById('errorMsg').textContent = 'Mot de passe incorrect 💔';
+      }
+    }
+  </script>
+</body>
+</html>
