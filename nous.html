@@ -1,59 +1,187 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Nous</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alicia & FX</title>
   <style>
     body {
-      background-color: #fff5fa;
       font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
+      margin: 0;
+      background-color: #fffafc;
       color: #333;
     }
-    h1 {
-      color: #e57ca8;
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffcccc;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    .navbar h1 {
+      margin: 0;
+      color: #c94f7c;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      background: black;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      background: #ffd6e8;
+      padding: 8px 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive pour petits écrans */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffe6ea;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* ACCUEIL - PHOTOS */
     .souvenirs img {
       max-width: 100%;
       height: auto;
       border-radius: 16px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin: 10px;
+      width: 20%;
     }
+
+    /* ANECDOTES */
     .anecdote {
       background: #ffe0ef;
       border-radius: 16px;
       padding: 20px;
       margin-top: 20px;
     }
+
+    section {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #e57ca8;
+    }
   </style>
 </head>
 <body>
-  <h1>Alicia & FX : c'est très très bien </h1>
-  <p>Bienvenue dans notre petit coin à nous 💕</p>
 
-  <h2>📸 Hihi tema :</h2>
-  <div class="souvenirs">
-    <img src="poule.jpg" style="width: 20%;" class="rounded-2xl shadow-md" />
-    <img src="tomber.jpg" style="width: 20%;" class="rounded-2xl shadow-md" />
-    <img src="coeurmoustache.jpg" style="width: 20%;" class="rounded-2xl shadow-md" />
-    <img src="rigoler.jpg" style="width: 20%;" class="rounded-2xl shadow-md" />
-  </div>
+  <!-- Menu -->
+  <nav class="navbar">
+    <h1>Alicia & FX</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#anecdotes">Anecdotes</a>
+      <a href="#musiques">Musiques</a>
+      <a href="#timeline">Time Line</a>
+      <a href="#blabla">Du Blabla</a>
+      <a href="#album">Album photos</a>
+    </div>
+  </nav>
 
-  <h2>🌸 Menu :</h2>
-  <ul>
-    <li>Anecdotes</li>
-    <li>Musique</li>
-    <li>Time Line</li>
-    <li>Du Blabla</li>
-    <li>Album Photos</li>
-  </ul>
+  <!-- Accueil -->
+  <section id="accueil">
+    <h2>💫 Alicia & FX : c’est très très bien 💫</h2>
+    <p>Bienvenue dans notre petit coin à nous 💕</p>
 
-  <div class="anecdote">
-    <h3>Premier date : Haikyuu & Popcorns</h3>
-    <p>On était peut-être pas encore certains de la direction dans laquelle les choses allaient, mais personnellement je me doutais que c'était pas purement amical et anodin je suppose. J'avais très hâte autant pour le film que pour toi. J’ai apprécié le fait que tu fasses des pauses pour me laisser crier, sauter, tourner, courir, respirer, presque pleurer, et revenir m'asseoir. Ainsi que (même si ça tombe sous le sens) le fait qu'on l’ait regardé en VOST et non en VF (Dieu merci). Et j'ai fait cramer du popcorn si je ne me trompe pas, mais on l'a mangé quand même. Je ne voulais pas partir au travail à ce moment-là, mais fallait bien que j'y aille. Et si ma mémoire ne me joue pas de tour, pour me convaincre de partir t’as dit que je viendrais bientôt pour manger des trucs sucrés. (Et on a fait une crème brûlée il me semble, puis j'ai dormi chez toi). ♡</p>
-    <img src="haikyuu.jpg" style="width: 20%;" class="rounded-2xl shadow-md" />
-  </div>
+    <h3>📸 Hihi tema :</h3>
+    <div class="souvenirs">
+      <img src="poule.jpg" alt="poule" />
+      <img src="tomber.jpg" alt="tomber" />
+      <img src="coeurmoustache.jpg" alt="coeurmoustache" />
+      <img src="rigoler.jpg" alt="rigoler" />
+    </div>
+  </section>
+
+  <!-- Anecdotes -->
+  <section id="anecdotes">
+    <h2>📝 Anecdotes</h2>
+    <div class="anecdote">
+      <h3>Premier date : Haikyuu & Popcorns</h3>
+      <p>
+        On était peut-être pas encore certains de la direction dans laquelle les choses allaient, mais personnellement je me doutais que c'était pas purement amical et anodin je suppose. J'avais très hâte autant pour le film que pour toi. J’ai apprécié le fait que tu fasses des pauses pour me laisser crier, sauter, tourner, courir, respirer, presque pleurer, et revenir m'asseoir. Ainsi que (même si ça tombe sous le sens) le fait qu'on l’ait regardé en VOST et non en VF (Dieu merci). Et j'ai fait cramer du popcorn si je ne me trompe pas, mais on l'a mangé quand même. Je ne voulais pas partir au travail à ce moment-là, mais fallait bien que j'y aille. Et si ma mémoire ne me joue pas de tour, pour me convaincre de partir t’as dit que je viendrais bientôt pour manger des trucs sucrés. (Et on a fait une crème brûlée il me semble, puis j'ai dormi chez toi). ♡
+      </p>
+      <img src="haikyuu.jpg" alt="Haikyuu" style="width: 20%;" />
+    </div>
+  </section>
+
+  <!-- Musiques -->
+  <section id="musiques">
+    <h2>🎵 Musiques</h2>
+    <p>À remplir avec vos musiques préférées 💖</p>
+  </section>
+
+  <!-- Time Line -->
+  <section id="timeline">
+    <h2>📅 Time Line</h2>
+    <p>Ajoute ici les grandes étapes de votre histoire 🌟</p>
+  </section>
+
+  <!-- Du Blabla -->
+  <section id="blabla">
+    <h2>💬 Du Blabla</h2>
+    <p>Petits mots, pensées, ou déclarations 💌</p>
+  </section>
+
+  <!-- Album photos -->
+  <section id="album">
+    <h2>📷 Album Photos</h2>
+    <p>Encore plus de photos à ajouter ici 🥰</p>
+  </section>
+
+  <!-- Script pour menu responsive -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
